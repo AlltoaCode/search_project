@@ -1,11 +1,12 @@
-import requests
-from bs4 import BeautifulSoup
+# import search
+# import visualize
 
-r = requests.get('https://www.python.org')
-print(int(r.status_code))
+print(
+    "Page visualization program 1.0"
+    "for Help type -help"
+)
 
-soup = BeautifulSoup(r.text, 'html.parser')
-soup = soup.prettify()
-print(soup)
+input_command = input()
 
-soup.
+if input.lower() == "":
+    print("")
