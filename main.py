@@ -2,11 +2,11 @@
 # import visualize
 
 print(
-    "Page visualization program 1.0"
-    "for Help type -help"
+    " [PH] startup message \n "
+    "for help, type help"
 )
 
 input_command = input()
 
-if input.lower() == "":
+if input == "":
     print("")

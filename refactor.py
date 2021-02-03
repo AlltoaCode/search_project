@@ -18,13 +18,11 @@ class WebPage:
         return page in self.linked_pages
 
     # METODY -----------------------------------------
-
-    def build_linked_pages(self):
+    
+    def search_domain(self):
         response = requests.get(self.url)
-        if response.status_code != 200:
-            return
-            # raise Exception("CONNECTION ERROR - HTTP response code is: " + str(response.status_code))
-
+        if response.status_code == 200:
+            pass
         soup = BeautifulSoup(response.text, 'html.parser')
 
         for link in soup.find_all('a'):
@@ -47,50 +45,4 @@ class WebPage:
 
         self.sort_code404_pages()
 
-    def build_WebPage_objects(self):
-        web_objects = []
 
-        for page_url in self.working_pages:
-            page_url = WebPage(page_url)
-            self.linked_pages_objects.append(page_url)
-            
-    def sort_code404_pages(self):
-        working_pages = []
-
-        for page_url in self.linked_pages_internal:
-            response = requests.get(page_url)
-            print(page_url + " ; " + str(response.status_code))
-            if response.status_code == 200:
-                working_pages.append(page_url)
-            
-            self.working_pages.append(page_url)
-
-
-
-page = WebPage(stranka)
-page.build_linked_pages()
-
-# driver code - testing
-# print("Odkazy první stránky")
-# print(page.working_pages)
-# print("========================")
-# print(len(page.linked_pages_internal))
-# print("========================")
-
-# page.build_WebPage_objects()
-# page.linked_pages_objects[0].build_linked_pages()
-
-# print("Odkazy druhé (vnořené 2x) stránky")
-# print(page.linked_pages_objects[0].linked_pages_internal)
-# print("========================")
-# print(len(page.linked_pages_objects[0].linked_pages_internal))
-# print("========================")
-
-# page.linked_pages_objects[0].build_WebPage_objects()
-# page.linked_pages_objects[0].linked_pages_objects[0].build_linked_pages()
-
-# print("Odkazy třetí (vnořené 3x) stránky")
-# print(page.linked_pages_objects[0].linked_pages_objects[0].linked_pages_internal)
-# print("========================")
-# print(len(page.linked_pages_objects[0].linked_pages_objects[0].linked_pages_internal))
-# print("========================")
