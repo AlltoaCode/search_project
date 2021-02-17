@@ -4,7 +4,7 @@ import visualize
 import sys
 
 # MESSAGES
-VERSION = "version 1.0"
+VERSION = "version 0.5"
 HELP = """ Program for visualizing website topology     
 
         Usage: main.py (--verbose | -n | -o | -m | ...) <URL> (<OUTPUT_FILE>) (<MAX_NUMBER_OF_VISITED_SITES>)"
@@ -31,9 +31,9 @@ opts_list = ["-v","--version","-h","--help","-o","--output","--verbose","-n","--
 
 
 # SETTINGS BOOLS
-verbose = False      #done
-novisuals = False    #done
-output = False
+verbose = False      
+novisuals = False    
+output = False          # TODO: Not yet implemented
 max_override = False
 
 # MAX NUMBER OF SITES VISITED
