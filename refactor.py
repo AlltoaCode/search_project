@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 
 stranka = "https://www.coolinarka.cz/"
 
+ref_verbose = False
+ref_max_sites = 50
+
 # Global var
 
 webpage_set = set()
@@ -11,9 +14,7 @@ url_set = set()
 class WebPage:
     def __init__(self, url):
         self.url = url
-        self.linked_pages = []                 #pages that remain in the same domain
         self.working_pages = []
-        self.linked_pages_objects = []  
 
     def __repr__(self):
         return self.url
@@ -72,6 +73,9 @@ def search_site(WebPage_obj):
 
     search_url = WebPage_obj.url
 
+    if ref_max_sites <= len(url_set) and ref_max_sites != 0:
+        return
+
     if search_url in url_set:
         return
 
@@ -86,51 +90,55 @@ def search_site(WebPage_obj):
 
     WebPage_list = create_Webpage_objs(search_url, linked_pages_working)
 
-    print(
-        "prošlá webovka: ", WebPage_obj.url, "\n"
-        "odkazy: ", linked_pages_working, "\n"
-        "-------------------------------------------\n"
-    )
+    if ref_verbose == True:
+        print(
+            f"visited website: {WebPage_obj.url} \n"
+            f"links: {linked_pages_working} \n"
+            "-------------------------------------------\n"
+        )
     url_set.add(search_url)
     webpage_set.add(WebPage_obj)
 
-    print(
-        "url set: ", str(url_set), "\n"
-        "webpage set: ", str(webpage_set), "\n"
-        "------------------------------------------\n"
-    )
+    # print(
+    #     "url set: ", str(url_set), "\n"
+    #     "webpage set: ", str(webpage_set), "\n"
+    #     "------------------------------------------\n"
+    # )
 
     for site in WebPage_list:
         search_site(site)
 
+
+
+
+
 ####################################################################################################
 # BOOT SEQUENCE
 
-print("Python website topology program v1. For more info, type help.")
+# print("Python website topology program v1. For more info, type help.")
 
-while True:
-    user_input = input()
+# while True:
+#     user_input = input()
 
-    if user_input == "search":
-        url = input("search url?: ")
-        url = WebPage(url)
-        search_site(url)
+#     if user_input == "search":
+#         url = input("search url?: ")
+#         if check_valid_website(url):
+#             url = WebPage(url)
+#             search_site(url)
 
-        print(
-            "\n"
-            "#####################################################################################################\n"
-            "PROHLEDAVANI DOKONCENO"
-        )
+#             print(
+#                 "\n"
+#                 "#####################################################################################################\n"
+#                 "PROHLEDAVANI DOKONCENO"
+#             )
 
-        print("testy")
-        print("delka webpage_set = ", len(webpage_set))
-        print("delka url_set = ", len(url_set))
+#             print("testy")
+#             print("delka webpage_set = ", len(webpage_set))
+#             print("delka url_set = ", len(url_set))
 
-    if user_input == "test":
-        for webpage in webpage_set:
-            print("Webpage url: ", webpage.url)
-            print("Webpage odkazy: ", webpage.working_pages)
-            print("-----------------------------------------------------------------------------------------------------")
+#     if user_input == "test":
+#         for webpage in webpage_set:
+#             print("Webpage url: ", webpage.url)
+#             print("Webpage odkazy: ", webpage.working_pages)
+#             print("-----------------------------------------------------------------------------------------------------")
             
-
-            #zkouška gitu
