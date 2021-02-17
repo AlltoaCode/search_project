@@ -8,7 +8,7 @@ this program takes an URL as an input and searches trough all the links that lin
 You control the program by passing it command line arguments.  
 The typical use would be:
 
->$python main.py (--verbose | -n | -o | -m | ...) <URL> (<OUTPUT_FILE>) (<MAX_NUMBER_OF_VISITED_SITES>)
+>$python main.py (--verbose | -n | -o | -m | ...) \<URL\> (<OUTPUT_FILE>) (<MAX_NUMBER_OF_VISITED_SITES>)
 
 you can run `$python main.py -h` or `$python main.py --help` to display the list of availibe options and an explanation of arguments.
 
