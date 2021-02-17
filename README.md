@@ -14,15 +14,15 @@ you can run `$python main.py -h` or `$python main.py --help` to display the list
 
 ### List of options
 
-* -v , --version      shows version
-* -h , --help         displays the help message
-* -o , --output       optional, output file (WILL REVRITE FILE IF EXISTING) -- NOT FINISHED YET
-                      Use: provide URL first, the second argument will be taken as an output file if -o is used
-    , --verbose       optional, will print to stdout progress reports
-* -n , --novisuals    optional, will not provide visualisation
-* -m , --max          optional, will change max number of visited sites
-                      By defaulst num of visited sites = 50!
-                      Set to 0 to not stop untill all visited, WARNING, might cause problems with extensive sites!
+* -v , --version      - shows version
+* -h , --help         - displays the help message
+* -o , --output       - optional, output file (WILL REVRITE FILE IF EXISTING) -- NOT FINISHED YET
+                      - Use: provide URL first, the second argument will be taken as an output file if -o is used
+    , --verbose       - optional, will print to stdout progress reports
+* -n , --novisuals    - optional, will not provide visualisation
+* -m , --max          - optional, will change max number of visited sites
+                      - By defaulst num of visited sites = 50!
+                      - Set to 0 to not stop untill all visited, WARNING, might cause problems with extensive sites!
  
 ### Explaining arguments
 
