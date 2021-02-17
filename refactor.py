@@ -99,46 +99,5 @@ def search_site(WebPage_obj):
     url_set.add(search_url)
     webpage_set.add(WebPage_obj)
 
-    # print(
-    #     "url set: ", str(url_set), "\n"
-    #     "webpage set: ", str(webpage_set), "\n"
-    #     "------------------------------------------\n"
-    # )
-
     for site in WebPage_list:
         search_site(site)
-
-
-
-
-
-####################################################################################################
-# BOOT SEQUENCE
-
-# print("Python website topology program v1. For more info, type help.")
-
-# while True:
-#     user_input = input()
-
-#     if user_input == "search":
-#         url = input("search url?: ")
-#         if check_valid_website(url):
-#             url = WebPage(url)
-#             search_site(url)
-
-#             print(
-#                 "\n"
-#                 "#####################################################################################################\n"
-#                 "PROHLEDAVANI DOKONCENO"
-#             )
-
-#             print("testy")
-#             print("delka webpage_set = ", len(webpage_set))
-#             print("delka url_set = ", len(url_set))
-
-#     if user_input == "test":
-#         for webpage in webpage_set:
-#             print("Webpage url: ", webpage.url)
-#             print("Webpage odkazy: ", webpage.working_pages)
-#             print("-----------------------------------------------------------------------------------------------------")
-            
