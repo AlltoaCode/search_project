@@ -49,8 +49,7 @@ Run the program from the command line, choose any options you wish and add at le
 
 This main file contains the command lige argument parser, and mostly works as a driver code for the rest of the project. 
 
-- **search.py** \- better name pending
-
+- **search.py** 
 This file contains all the code for the actual crawling trough the websites.
 
 Notable parts include the `WebPage Class`, which is used for storing data about each individual website visited, as it stores the sites URL and all the links that lead from it to other sites (within the same second level domain)
