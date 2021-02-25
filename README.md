@@ -34,6 +34,9 @@ you can run `$python main.py -h` or `$python main.py --help` to display the list
 
 >So, one argument is needed at all times, which will be used as the URL. The second one will be the output file (if -o is used), the third will be for selecting the maximum number of sites visited (if -m is used). If only -o or only -m is used, the first argument will still pass the URL and the second will pass the output file  or maximum number of sites visited respectively.
 
+## Dependecies
+This program uses requests, BeautifulSoup, networkx and mathplotlib
+
 ### TL;DR
 
 Run the program from the command line, choose any options you wish and add at least the webpage URL - more if you choose -o or -m.
