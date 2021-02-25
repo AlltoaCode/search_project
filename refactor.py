@@ -5,6 +5,7 @@ stranka = "https://www.coolinarka.cz/"
 
 ref_verbose = False
 ref_max_sites = 50
+ref_url = ""
 
 # Global var
 
@@ -51,7 +52,7 @@ def site_crawl(url):
         if link_href[0] == "#":                            # checking for links that link within the same site
             continue
 
-        if link_href[:len(url)] == url:          # checking for sites with the same domain part (https://site.../...) - stay in domain
+        if link_href[:len(ref_url)] == ref_url:          # checking for sites with the same domain part (https://site.../...) - stay in domain
             linked_pages.append(link_href)
         if link_href[0] == "/" and len(link_href) > 1:     # checking for site that start with "/" - stay in domain
             linked_pages.append(str(url) + link_href[1:])
