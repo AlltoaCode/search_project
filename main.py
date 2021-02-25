@@ -1,5 +1,5 @@
 import requests
-import refactor
+import search
 import visualize
 import sys
 
@@ -104,17 +104,14 @@ if output == True and max_override == True:
 if verbose == True:
     print("\n")
 
-# DRIVER CODE - RUNNING THE SEARCH FROM THE REFACTOR FILE
-
-refactor.ref_verbose = verbose          # setting verbose in the refactor file
-refactor.ref_max_sites = max_num_sites
-refactor.ref_url = url
-url = refactor.WebPage(url)
-refactor.search_site(url)
+# DRIVER CODE - RUNNING THE SEARCH FROM THE SEARCH FILE
+search.verbose = verbose          # setting verbose in the search file
+search.max_sites = max_num_sites
+search.search_url = url
+url = search.WebPage(url)
+search.search_site(url)
 
 
 # DRIVER CORE - DRAWING A GRAPH
-
-
 if novisuals == False:
-    visualize.draw_graph(refactor.webpage_set)
+    visualize.draw_graph(search.webpage_set)
