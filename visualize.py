@@ -12,7 +12,7 @@ class GraphVisualization:
         self.visual.append(temp) 
 
     def visualize(self): 
-        G = nx.Graph() 
+        G = nx.MultiGraph() 
         G.add_edges_from(self.visual) 
         nx.draw_networkx(G) 
         plt.show() 
