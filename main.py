@@ -108,6 +108,7 @@ if verbose == True:
 
 refactor.ref_verbose = verbose          # setting verbose in the refactor file
 refactor.ref_max_sites = max_num_sites
+refactor.ref_url = url
 url = refactor.WebPage(url)
 refactor.search_site(url)
 
